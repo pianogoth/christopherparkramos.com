@@ -69,6 +69,9 @@ test("server-renders the complete résumé route", async () => {
   assert.match(html, /Cleveland Institute of Art/);
   assert.match(html, /BFA, Industrial Design/);
   assert.match(html, /Google Sheets \(VLOOKUP, custom formulas\)/);
+  assert.match(html, /<h2>Core Competencies<\/h2>/);
+  assert.match(html, /Email &amp; Lifecycle Marketing · Retention &amp; CRM · Paid Media Management/);
+  assert.match(html, /Cross-Functional Collaboration · Process &amp; Systems Design/);
   assert.match(html, /href="tel:\+14402121746"/);
   assert.match(html, /href="mailto:cpramos@me\.com"/);
   assert.match(html, /linkedin\.com\/in\/christopherparkramos/);
@@ -77,6 +80,9 @@ test("server-renders the complete résumé route", async () => {
   assert.match(html, /href="https:\/\/v1984\.art"/);
   assert.match(html, /href="https:\/\/www\.cia\.edu\/"/);
   assert.match(html, /href="\/"[^>]*>Portfolio</);
+  assert.match(html, /<main class="resume-main" id="top">/);
+  assert.match(html, /aria-label="Résumé footer navigation"/);
+  assert.match(html, /href="#top"[^>]*>Back to top</);
 });
 
 test("keeps the visible typography flat and sans-serif", async () => {
@@ -136,5 +142,5 @@ test("keeps the résumé in the site system with a compact print mode", async ()
   assert.match(css, /@media print/);
   assert.match(css, /@page\s*\{\s*margin:\s*\.5in/);
   assert.match(css, /@media print[\s\S]*--paper:\s*#ffffff[\s\S]*--ink:\s*#111111/);
-  assert.match(css, /\.resume-nav\s*\{\s*display:\s*none/);
+  assert.match(css, /\.resume-nav, \.resume-footer\s*\{\s*display:\s*none/);
 });

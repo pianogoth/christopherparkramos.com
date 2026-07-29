@@ -19,7 +19,7 @@ function Category({ title, items }: { title: string; items: string[] }) {
 
 export default function Resume() {
   return (
-    <main className="resume-main">
+    <main className="resume-main" id="top">
       <nav className="resume-nav" aria-label="Résumé navigation">
         <Link href="/">Portfolio</Link>
       </nav>
@@ -116,9 +116,18 @@ export default function Resume() {
       </section>
 
       <section className="resume-section">
+        <h2>Core Competencies</h2>
+        <p>Email &amp; Lifecycle Marketing · Retention &amp; CRM · Paid Media Management · KPI &amp; Revenue Analysis · Pricing &amp; Merchandising Analysis · Executive &amp; Stakeholder Reporting · Sales &amp; Inventory Data Synthesis · A/B Testing &amp; Optimization · Conversion Rate Optimization · E-Commerce Operations · Visual Merchandising · Creative Direction · Cross-Functional Collaboration · Process &amp; Systems Design</p>
+      </section>
+
+      <section className="resume-section">
         <h2>Tools</h2>
         <p>Shopify Plus · Klaviyo · Attentive · Google Analytics · Meta Ads &amp; Business Manager · Google Sheets (VLOOKUP, custom formulas) · Adobe Creative Suite · Heartland CRM · Asana · Slack</p>
       </section>
+
+      <footer className="resume-footer">
+        <nav className="footer-nav" aria-label="Résumé footer navigation"><Link href="/">Portfolio</Link><a href="#top">Back to top</a></nav>
+      </footer>
     </main>
   );
 }

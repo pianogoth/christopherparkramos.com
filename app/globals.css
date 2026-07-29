@@ -67,6 +67,8 @@ footer > p { max-width: 44ch; margin: 0 0 30px; color: var(--ink); font: inherit
 .resume-category h4 { margin: 0 0 8px; color: var(--secondary); font: inherit; }
 .resume-main ul { margin: 0; padding-left: 0; list-style: none; }
 .resume-main li { margin: 0 0 12px; }
+.resume-footer { margin: 110px 0 0; color: var(--secondary); }
+.resume-footer .footer-nav { margin-top: 0; }
 
 @media (max-width: 760px) {
   body { font-size: 22px; line-height: 1.28; }
@@ -90,7 +92,7 @@ footer > p { max-width: 44ch; margin: 0 0 30px; color: var(--ink); font: inherit
   html { scroll-behavior: auto; }
   body { font-size: 9pt; line-height: 1.2; }
   main.resume-main { width: auto; max-width: none; margin: 0; padding: 0; }
-  .resume-nav { display: none; }
+  .resume-nav, .resume-footer { display: none; }
   .resume-header { margin-bottom: 20pt; }
   .resume-contact { margin-bottom: 10pt; }
   .resume-section { margin-bottom: 18pt; }

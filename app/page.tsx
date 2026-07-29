@@ -30,21 +30,12 @@ export default function Home() {
         <a className="wordmark" href="#top" aria-label="Christopher Park Ramos, home">
           Christopher Park Ramos
         </a>
-        <nav aria-label="Primary navigation">
-          <a href="#contents">Cases</a>
-          <a href="mailto:cpramos@me.com">Contact</a>
-        </nav>
+        <p className="header-meta">Los Angeles, CA<br /><a href="mailto:cpramos@me.com">cpramos@me.com</a><br /><a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn<span className="sr-only"> (opens in a new tab)</span></a></p>
       </header>
 
       <section className="hero" id="top" aria-labelledby="hero-title">
-        <p className="eyebrow">Marketing · Operations · Strategy</p>
-        <h1 id="hero-title">Define the problem.<br />Then build the tool<br />it actually needs.</h1>
-        <div className="hero-bottom">
-          <p className="dek">Four cases from a decade spent turning ambiguous sales, inventory, and revenue data into decisions people could act on.</p>
-          <p className="contact-line">
-            Los Angeles, CA <span aria-hidden="true">·</span> <a href="mailto:cpramos@me.com">cpramos@me.com</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn<span className="sr-only"> (opens in a new tab)</span></a>
-          </p>
-        </div>
+        <h1 id="hero-title">Define the problem. Then build the tool it actually needs.</h1>
+        <p className="dek">Four cases from a decade spent turning ambiguous sales, inventory, and revenue data into decisions people could act on.</p>
       </section>
 
       <nav className="contents" id="contents" aria-label="Case studies">
@@ -55,7 +46,7 @@ export default function Home() {
               <a href={`#case-${index + 1}`}>
                 <span>{item.id}</span>
                 <strong>{item.title}</strong>
-                <span className="arrow" aria-hidden="true">↘</span>
+                <span className="entry-type">Case study</span>
               </a>
             </li>
           ))}
@@ -105,7 +96,7 @@ export default function Home() {
       <footer>
         <p>If any of this is relevant to something you’re building, I’d like to hear about it.</p>
         <div className="footer-meta"><a href="mailto:cpramos@me.com">cpramos@me.com</a><a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn</a><span>Los Angeles, CA</span></div>
-        <a className="back-top" href="#top">Back to top ↑</a>
+        <a className="back-top" href="#top">Back to top</a>
       </footer>
     </main>
   );

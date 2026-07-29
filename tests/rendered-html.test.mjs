@@ -57,4 +57,6 @@ test("keeps the visible typography flat and sans-serif", async () => {
   assert.match(css, /footer\s*>\s*p\s*\{[^}]*max-width:\s*44ch/s);
   assert.match(css, /\.case-section h3\s*\{[^}]*font:\s*inherit/s);
   assert.match(css, /\.case-header h2\s*\{[^}]*font:\s*inherit/s);
+  assert.match(css, /\.case-header h2\s*\{[^}]*text-decoration-line:\s*underline[^}]*text-decoration-color:\s*currentColor[^}]*text-decoration-thickness:\s*3px[^}]*text-underline-offset:\s*3px/s);
+  assert.doesNotMatch(css, /\.case-section h3\s*\{[^}]*text-decoration-line:\s*underline/s);
 });

@@ -39,6 +39,8 @@ export default function Home() {
         <p className="dek">Over a decade building the reporting, e-commerce, and creative systems a luxury multi-brand retailer ran on — across three brands, from the marketing side of the business. Currently consulting on brand systems for Ghurka. Los Angeles.</p>
       </section>
 
+      <div className="contents-break" aria-hidden="true" style={{ blockSize: "clamp(140px, 14vw, 220px)" }} />
+
       <nav className="contents" id="contents" aria-label="Case studies">
         <p className="contents-label">Contents</p>
         <ol>

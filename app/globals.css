@@ -22,7 +22,7 @@ main { width: calc(100% - 60px); max-width: 1080px; margin-left: 30px; padding: 
 .header-meta { margin: 0; color: var(--secondary); }
 .header-meta a:hover { color: var(--ink); }
 
-.intro { margin: 0 0 68px; scroll-margin-top: 20px; }
+.intro { margin: 0; scroll-margin-top: 20px; }
 .dek { max-width: 44ch; margin: 0; color: var(--secondary); }
 
 .contents { margin: 0; }
@@ -74,7 +74,6 @@ footer > p { max-width: 44ch; margin: 0 0 30px; color: var(--ink); font: inherit
   body { font-size: 22px; line-height: 1.28; }
   main { width: calc(100% - 32px); margin-left: 16px; padding-top: 14px; }
   .site-header { margin-bottom: 42px; }
-  .intro { margin-bottom: 60px; }
   .case-study { margin-bottom: 82px; }
   footer { margin-top: 100px; }
   .resume-nav { margin-bottom: 56px; }

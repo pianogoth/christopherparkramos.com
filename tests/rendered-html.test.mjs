@@ -115,7 +115,11 @@ test("keeps the visible typography flat and sans-serif", async () => {
   assert.match(css, /footer\s*>\s*p\s*\{[^}]*max-width:\s*44ch/s);
   assert.match(css, /\.contents\s*\{\s*margin:\s*0;\s*\}/s);
   assert.doesNotMatch(css, /\.contents\s*\{[^}]*(?:margin-bottom|padding-bottom):/s);
+  assert.match(css, /\.intro\s*\{[^}]*margin:\s*0;[^}]*scroll-margin-top:\s*20px/s);
+  assert.doesNotMatch(css, /@media \(max-width:\s*760px\)[\s\S]*\.intro\s*\{/s);
+  assert.match(page, /<\/section>\s*<div className="contents-break" aria-hidden="true" style=\{\{ blockSize: "clamp\(140px, 14vw, 220px\)" \}\} \/>\s*<nav className="contents"/s);
   assert.match(page, /<\/nav>\s*<div className="contents-break" aria-hidden="true" style=\{\{ blockSize: "clamp\(140px, 14vw, 220px\)" \}\} \/>\s*<article className="case-study" id="case-1">/s);
+  assert.equal(page.match(/className="contents-break"/g)?.length, 2);
   assert.match(css, /\.case-section h3\s*\{[^}]*font:\s*inherit/s);
   assert.match(css, /\.case-header h2\s*\{[^}]*font:\s*inherit/s);
   assert.match(css, /\.case-header h2\s*\{[^}]*text-decoration-line:\s*underline[^}]*text-decoration-color:\s*currentColor[^}]*text-decoration-thickness:\s*3px[^}]*text-underline-offset:\s*3px/s);

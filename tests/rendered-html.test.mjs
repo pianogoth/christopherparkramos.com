@@ -26,9 +26,16 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /Turning a Maintenance Channel Into a Growth Channel/);
   assert.match(html, /One Sheet, Three Platforms, No Dashboard/);
   assert.match(html, /Running Three Brands as a Company of One/);
+  assert.match(html, /Coda v1984/);
+  assert.match(html, />CODA</);
+  assert.match(html, /Everything above this is measured in quarters/);
+  assert.match(html, /href="https:\/\/v1984\.art"/);
   assert.match(html, /cpramos@me\.com/);
   assert.match(html, /linkedin\.com\/in\/christopherparkramos/);
   assert.doesNotMatch(html, /CR[–-]0[1-4]/);
+  assert.doesNotMatch(html, /Most inefficiency survives exactly/);
+  assert.doesNotMatch(html, /The distinction that mattered/);
+  assert.doesNotMatch(html, /Why It Mattered/);
 });
 
 test("keeps the visible typography flat and sans-serif", async () => {

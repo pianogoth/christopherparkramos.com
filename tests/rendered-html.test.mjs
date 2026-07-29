@@ -21,7 +21,8 @@ test("server-renders the complete portfolio", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Christopher Park Ramos/);
-  assert.match(html, /Define the problem\. Then build the tool it actually needs\./);
+  assert.match(html, /Four cases from a decade spent turning ambiguous sales/);
+  assert.doesNotMatch(html, /Define the problem\. Then build the tool it actually needs\./);
   assert.match(html, /The Campaign Everyone Assumed Was Fine/);
   assert.match(html, /Turning a Maintenance Channel Into a Growth Channel/);
   assert.match(html, /One Sheet, Three Platforms, No Dashboard/);

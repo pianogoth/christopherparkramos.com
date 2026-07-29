@@ -33,8 +33,7 @@ export default function Home() {
         <p className="header-meta">Los Angeles, CA<br /><a href="mailto:cpramos@me.com">cpramos@me.com</a><br /><a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn<span className="sr-only"> (opens in a new tab)</span></a></p>
       </header>
 
-      <section className="hero" id="top" aria-labelledby="hero-title">
-        <h1 id="hero-title">Define the problem. Then build the tool it actually needs.</h1>
+      <section className="intro" id="top">
         <p className="dek">Four cases from a decade spent turning ambiguous sales, inventory, and revenue data into decisions people could act on.</p>
       </section>
 

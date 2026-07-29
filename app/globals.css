@@ -65,8 +65,8 @@ footer > p { max-width: 44ch; margin: 0 0 30px; color: var(--ink); font: inherit
 .resume-role > p { margin: 0 0 30px; }
 .resume-category { margin: 48px 0 0; }
 .resume-category h4 { margin: 0 0 8px; color: var(--secondary); font: inherit; }
-.resume-main ul { margin: 0; padding-left: 1.05em; }
-.resume-main li { margin: 0 0 12px; padding-left: .15em; }
+.resume-main ul { margin: 0; padding-left: 0; list-style: none; }
+.resume-main li { margin: 0 0 12px; }
 
 @media (max-width: 760px) {
   body { font-size: 22px; line-height: 1.28; }

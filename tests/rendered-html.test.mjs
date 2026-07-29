@@ -85,6 +85,16 @@ test("server-renders the complete résumé route", async () => {
   assert.match(html, /<main class="resume-main" id="top">/);
   assert.match(html, /aria-label="Résumé footer navigation"/);
   assert.match(html, /href="#top"[^>]*>Back to top</);
+
+  const statementItems = [...html.matchAll(/<li>(.*?)<\/li>/g)].map((match) => match[1]);
+  assert.equal(statementItems.length, 24);
+  assert.ok(statementItems.every((item) => item.endsWith(".")));
+  assert.match(html, /<h2>Core Competencies<\/h2>/);
+  assert.doesNotMatch(html, /<h[1-4]>[^<]*\.<\/h[1-4]>/);
+  assert.match(html, /BFA, Industrial Design<\/p>/);
+  assert.match(html, /Process &amp; Systems Design<\/p>/);
+  assert.match(html, /Asana · Slack<\/p>/);
+  assert.doesNotMatch(html, /BFA, Industrial Design\.|Process &amp; Systems Design\.|Asana · Slack\./);
 });
 
 test("keeps the visible typography flat and sans-serif", async () => {

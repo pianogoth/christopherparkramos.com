@@ -49,33 +49,33 @@ export default function Resume() {
           <p>Luxury multi-brand retailer, 50+ global and emerging designers, e-commerce and physical retail. Started in store management at opening and moved into operations; scope grew from one brand to three.</p>
 
           <Category title="Email & Lifecycle" items={[
-            "Rebuilt the email program on segmentation and behavioral triggers with continuous A/B testing across subject lines, timing, design, and content; open rates +105%, click rates +30%, conversion +9%",
-            "Grew attributed email revenue 91% YoY, $474K to $907K",
-            "Built lifecycle automation (welcome, post-purchase, win-back) from near-dormant flows to $112K in annual revenue, up from $33K",
-            "Implemented dynamic product blocks, raising average cart from 1.4 to 2.2 items and AOV from $180 to $223",
-            "Klaviyo used the account as an internal case study for email optimization",
+            "Rebuilt the email program on segmentation and behavioral triggers with continuous A/B testing across subject lines, timing, design, and content; open rates +105%, click rates +30%, conversion +9%.",
+            "Grew attributed email revenue 91% YoY, $474K to $907K.",
+            "Built lifecycle automation (welcome, post-purchase, win-back) from near-dormant flows to $112K in annual revenue, up from $33K.",
+            "Implemented dynamic product blocks, raising average cart from 1.4 to 2.2 items and AOV from $180 to $223.",
+            "Klaviyo used the account as an internal case study for email optimization.",
           ]} />
           <Category title="Paid Media & Analytics" items={[
-            "Audited agency-managed Meta campaigns, identified 0.83 ROAS, and moved the operation in-house; rebuilt targeting, creative rotation, and bid strategy to reach 5.55 ROAS on reduced spend",
-            "Consolidated Meta, Google Analytics, and Shopify data into a single weekly reporting model in Google Sheets, with built-in formulas calculating revenue, ROAS, and growth for ownership",
-            "Ran multi-channel campaign strategy across primary and diffusion brands against ROAS targets",
+            "Audited agency-managed Meta campaigns, identified 0.83 ROAS, and moved the operation in-house; rebuilt targeting, creative rotation, and bid strategy to reach 5.55 ROAS on reduced spend.",
+            "Consolidated Meta, Google Analytics, and Shopify data into a single weekly reporting model in Google Sheets, with built-in formulas calculating revenue, ROAS, and growth for ownership.",
+            "Ran multi-channel campaign strategy across primary and diffusion brands against ROAS targets.",
           ]} />
           <Category title="Merchandising & Cross-Functional Planning" items={[
-            "Sat between buying and marketing to align promotional calendars, working against buying-team forecasts to set sale timing and promotional depth in service of sell-through and inventory goals",
-            "Led cross-departmental planning sessions connecting promotional strategy to inventory position and revenue targets",
-            "Executed visual merchandising and category hierarchy for promotional events",
-            "Built and delivered recurring executive business reviews for global brand partners, synthesizing sales, inventory, merchandising, and marketing performance into decks with go-forward recommendations",
+            "Sat between buying and marketing to align promotional calendars, working against buying-team forecasts to set sale timing and promotional depth in service of sell-through and inventory goals.",
+            "Led cross-departmental planning sessions connecting promotional strategy to inventory position and revenue targets.",
+            "Executed visual merchandising and category hierarchy for promotional events.",
+            "Built and delivered recurring executive business reviews for global brand partners, synthesizing sales, inventory, merchandising, and marketing performance into decks with go-forward recommendations.",
           ]} />
           <Category title="E-Commerce & Site" items={[
-            "Owned Shopify Plus backend, site speed optimization, and SEO implementation",
-            "Developed SEO-driven blog content program with keyword research and editorial production",
-            "Built the product and lifestyle photography workflow, holding the fastest turnaround on the team while maintaining brand standards",
-            "Produced homepage creative and promotional graphics tied to seasonal campaigns",
+            "Owned Shopify Plus backend, site speed optimization, and SEO implementation.",
+            "Developed SEO-driven blog content program with keyword research and editorial production.",
+            "Built the product and lifestyle photography workflow, holding the fastest turnaround on the team while maintaining brand standards.",
+            "Produced homepage creative and promotional graphics tied to seasonal campaigns.",
           ]} />
           <Category title="Creative Direction" items={[
-            "Directed off-site campaign photoshoots concept through execution, managing creative teams on budget; the resulting assets consistently outperformed all other campaign creative across channels",
-            "Held visual identity and packaging as a system across three brands rather than rebuilding per project",
-            "Established centralized digital asset management across email, social, and site",
+            "Directed off-site campaign photoshoots concept through execution, managing creative teams on budget; the resulting assets consistently outperformed all other campaign creative across channels.",
+            "Held visual identity and packaging as a system across three brands rather than rebuilding per project.",
+            "Established centralized digital asset management across email, social, and site.",
           ]} />
         </article>
 
@@ -85,11 +85,11 @@ export default function Resume() {
             <p>U.S. Air Force / National Security Agency · Fort Gordon, GA · 2004 – 2010</p>
           </header>
           <ul>
-            <li>Analyzed complex information and produced written assessments used by senior decision-makers</li>
-            <li>Delivered time-sensitive analysis under tight deadlines and strict accuracy requirements</li>
-            <li>Rewrote the onboarding and training manual for incoming analysts, reducing ramp time for new hires</li>
-            <li>Coordinated with analyst teams across multiple agencies on joint assessments and briefings</li>
-            <li>Held Top Secret/SCI clearance</li>
+            <li>Analyzed complex information and produced written assessments used by senior decision-makers.</li>
+            <li>Delivered time-sensitive analysis under tight deadlines and strict accuracy requirements.</li>
+            <li>Rewrote the onboarding and training manual for incoming analysts, reducing ramp time for new hires.</li>
+            <li>Coordinated with analyst teams across multiple agencies on joint assessments and briefings.</li>
+            <li>Held Top Secret/SCI clearance.</li>
           </ul>
         </article>
 

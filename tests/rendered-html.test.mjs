@@ -67,3 +67,20 @@ test("keeps the visible typography flat and sans-serif", async () => {
   assert.match(css, /\.case-header h2\s*\{[^}]*text-decoration-line:\s*underline[^}]*text-decoration-color:\s*currentColor[^}]*text-decoration-thickness:\s*3px[^}]*text-underline-offset:\s*3px/s);
   assert.doesNotMatch(css, /\.case-section h3\s*\{[^}]*text-decoration-line:\s*underline/s);
 });
+
+test("uses the approved CR favicon", async () => {
+  const [favicon, layout] = await Promise.all([
+    readFile(new URL("../public/favicon.svg", import.meta.url), "utf8"),
+    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(favicon, /viewBox="0 0 64 64"/);
+  assert.match(favicon, /<rect width="64" height="64" fill="#111111"\/>/);
+  assert.match(favicon, /font-family="Helvetica Neue, Helvetica, Arial, sans-serif"/);
+  assert.match(favicon, /font-weight="700"/);
+  assert.match(favicon, /fill="#f2f2ee"/);
+  assert.match(favicon, />CR<\/text>/);
+  assert.doesNotMatch(favicon, /stroke=|gradient|filter|circle|path/);
+  assert.match(layout, /icon:\s*"\/favicon\.svg"/);
+  assert.match(layout, /shortcut:\s*"\/favicon\.svg"/);
+});

@@ -52,6 +52,8 @@ export default function Home() {
         </ol>
       </nav>
 
+      <div className="contents-break" aria-hidden="true" style={{ blockSize: "clamp(140px, 14vw, 220px)" }} />
+
       <article className="case-study" id="case-1">
         <CaseHeader title="The Campaign Everyone Assumed Was Fine" />
         <div className="case-body">

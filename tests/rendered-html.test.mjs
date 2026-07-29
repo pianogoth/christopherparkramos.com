@@ -151,7 +151,13 @@ test("keeps the résumé in the site system with a compact print mode", async ()
 
   assert.match(resume, /title:\s*"Christopher Ramos — Résumé"/);
   assert.match(css, /\.resume-main\s*\{[^}]*max-width:\s*44ch/s);
-  assert.match(css, /\.resume-section\s*>\s*h2\s*\{[^}]*color:\s*var\(--secondary\)[^}]*font:\s*inherit/s);
+  assert.match(css, /\.resume-main\s*\{[^}]*--resume-gap:\s*1\.3em/s);
+  assert.match(css, /\.resume-section\s*>\s*h2\s*\{[^}]*margin:\s*0;[^}]*color:\s*var\(--secondary\)[^}]*font:\s*inherit/s);
+  assert.match(css, /\.resume-section\s*>\s*p\s*\{\s*margin:\s*0;\s*\}/s);
+  assert.match(css, /\.resume-category h4\s*\{[^}]*margin:\s*0;[^}]*color:\s*var\(--secondary\)/s);
+  assert.match(css, /\.resume-role-header\s*\{\s*margin-bottom:\s*var\(--resume-gap\)/s);
+  assert.match(css, /\.resume-(?:nav|header|section|role|footer)[^{]*\{[^}]*var\(--resume-gap\)/s);
+  assert.doesNotMatch(css.split("@media print")[0], /\.resume-(?:nav|header|section|role|contact|category|footer)[^{]*\{[^}]*(?:30|40|48|56|64|70|82|110)px/s);
   assert.match(css, /\.resume-role-header h3\s*\{[^}]*text-decoration-line:\s*underline[^}]*text-decoration-thickness:\s*3px/s);
   assert.match(css, /\.resume-main ul\s*\{[^}]*padding-left:\s*0;[^}]*list-style:\s*none/s);
   assert.doesNotMatch(css, /\.resume-main li\s*\{[^}]*padding-left:/s);

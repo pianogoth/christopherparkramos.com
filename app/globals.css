@@ -49,25 +49,29 @@ footer > p { max-width: 44ch; margin: 0 0 30px; color: var(--ink); font: inherit
 .footer-nav { display: flex; gap: 30px; align-items: baseline; margin-top: 30px; }
 .footer-nav .back-top { margin-top: 0; }
 
-.resume-main { max-width: 44ch; }
-.resume-nav { margin-bottom: 70px; color: var(--secondary); }
+.resume-main { --resume-gap: 1.3em; max-width: 44ch; }
+.resume-nav { margin-bottom: var(--resume-gap); color: var(--secondary); }
 .resume-nav a, .resume-contact a, .resume-role-header a, .resume-section > p a { text-decoration: underline; text-decoration-color: var(--secondary); text-decoration-thickness: 3px; text-underline-offset: 3px; }
-.resume-header { margin-bottom: 110px; }
+.resume-header { margin-bottom: var(--resume-gap); }
 .resume-header h1 { margin: 0; font: inherit; text-decoration-line: underline; text-decoration-color: currentColor; text-decoration-thickness: 3px; text-underline-offset: 3px; }
-.resume-contact { margin: 0 0 40px; color: var(--secondary); }
+.resume-contact { margin: 0 0 var(--resume-gap); color: var(--secondary); }
 .resume-summary { margin: 0; }
-.resume-section { margin-bottom: 110px; }
-.resume-section > h2 { margin: 0 0 48px; color: var(--secondary); font: inherit; }
-.resume-role { margin: 0 0 82px; }
-.resume-role-header { margin-bottom: 30px; }
+.resume-section { margin-bottom: var(--resume-gap); }
+.resume-section:last-of-type { margin-bottom: 0; }
+.resume-section > h2 { margin: 0; color: var(--secondary); font: inherit; }
+.resume-section > p { margin: 0; }
+.resume-role { margin: 0 0 var(--resume-gap); }
+.resume-role:last-child { margin-bottom: 0; }
+.resume-role-header { margin-bottom: var(--resume-gap); }
 .resume-role-header h3 { margin: 0; font: inherit; text-decoration-line: underline; text-decoration-color: currentColor; text-decoration-thickness: 3px; text-underline-offset: 3px; }
 .resume-role-header p { margin: 0; color: var(--secondary); }
-.resume-role > p { margin: 0 0 30px; }
-.resume-category { margin: 48px 0 0; }
-.resume-category h4 { margin: 0 0 8px; color: var(--secondary); font: inherit; }
+.resume-role > p { margin: 0; }
+.resume-category { margin: var(--resume-gap) 0 0; }
+.resume-category h4 { margin: 0; color: var(--secondary); font: inherit; }
 .resume-main ul { margin: 0; padding-left: 0; list-style: none; }
 .resume-main li { margin: 0 0 12px; }
-.resume-footer { margin: 110px 0 0; color: var(--secondary); }
+.resume-main li:last-child { margin-bottom: 0; }
+.resume-footer { margin: var(--resume-gap) 0 0; color: var(--secondary); }
 .resume-footer .footer-nav { margin-top: 0; }
 
 @media (max-width: 760px) {
@@ -76,9 +80,6 @@ footer > p { max-width: 44ch; margin: 0 0 30px; color: var(--ink); font: inherit
   .site-header { margin-bottom: 42px; }
   .case-study { margin-bottom: 82px; }
   footer { margin-top: 100px; }
-  .resume-nav { margin-bottom: 56px; }
-  .resume-header, .resume-section { margin-bottom: 82px; }
-  .resume-role { margin-bottom: 64px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

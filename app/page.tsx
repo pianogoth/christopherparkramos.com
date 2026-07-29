@@ -30,7 +30,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Christopher Ramos, home">
-          CHRISTOPHER RAMOS
+          Christopher Ramos
         </a>
         <p className="header-meta">Los Angeles, CA <span aria-hidden="true">·</span> <a href="mailto:cpramos@me.com">cpramos@me.com</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn<span className="sr-only"> (opens in a new tab)</span></a></p>
       </header>
@@ -109,8 +109,8 @@ export default function Home() {
 
       <footer>
         <p>I&apos;m looking for work where the analytical and creative sides of a brand aren&apos;t handled by different people. If that describes something you&apos;re building, I&apos;d like to hear about it.</p>
-        <div className="footer-meta"><a href="mailto:cpramos@me.com">cpramos@me.com</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn</a><span aria-hidden="true">·</span><span>Los Angeles, CA</span></div>
-        <nav className="footer-nav" aria-label="Footer navigation"><a className="back-top" href="#top">Back to top</a><Link href="/resume/">Résumé</Link></nav>
+        <div className="footer-meta"><a href="mailto:cpramos@me.com">cpramos@me.com</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn</a><span aria-hidden="true">·</span><Link href="/resume/">Résumé</Link><span aria-hidden="true">·</span><span>Los Angeles, CA</span></div>
+        <nav className="footer-nav" aria-label="Footer navigation"><a className="back-top" href="#top">Back to top</a></nav>
       </footer>
     </main>
   );

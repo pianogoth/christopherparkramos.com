@@ -10,7 +10,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 30px/1.3 var(--sans); }
-a { color: inherit; text-decoration: none; }
+a { color: inherit; text-decoration-line: underline; text-decoration-color: var(--secondary); text-decoration-thickness: 3px; text-underline-offset: 3px; }
 a:hover { color: var(--secondary); }
 a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 ::selection { background: var(--ink); color: var(--paper); }
@@ -29,7 +29,6 @@ main { width: calc(100% - 60px); max-width: 1080px; margin-left: 30px; padding: 
 .contents-label { margin: 0 0 8px; color: var(--secondary); }
 .contents ol { margin: 0; padding: 0; list-style: none; }
 .contents li { margin: 0; }
-.contents a:hover { text-decoration: underline; text-decoration-color: var(--secondary); text-decoration-thickness: 3px; text-underline-offset: 3px; }
 
 .case-study { max-width: 44ch; margin: 0 0 112px; scroll-margin-top: 20px; }
 .case-header { margin: 0 0 30px; }
@@ -39,21 +38,17 @@ main { width: calc(100% - 60px); max-width: 1080px; margin-left: 30px; padding: 
 .case-copy p { margin: 0; }
 blockquote { margin: 48px 0; padding: 0; border: 0; font: inherit; }
 .coda .case-body p { margin: 0 0 30px; }
-.external-link { text-decoration: underline; text-decoration-color: var(--secondary); text-decoration-thickness: 3px; text-underline-offset: 3px; }
 
 footer { margin: 150px 0 0; color: var(--secondary); }
 footer > p { max-width: 44ch; margin: 0 0 30px; color: var(--ink); font: inherit; }
 .footer-meta { display: flex; flex-wrap: wrap; gap: 0 8px; }
-.footer-meta a { text-decoration: underline; text-decoration-color: var(--secondary); text-decoration-thickness: 3px; text-underline-offset: 3px; }
 .back-top { display: block; width: fit-content; margin-top: 30px; }
 .footer-nav { display: flex; gap: 30px; align-items: baseline; margin-top: 30px; }
 .footer-nav .back-top { margin-top: 0; }
 
 .resume-main { --resume-gap: 1.3em; max-width: 44ch; }
-.resume-nav { margin-bottom: var(--resume-gap); color: var(--secondary); }
-.resume-nav a, .resume-contact a, .resume-role-header a, .resume-section > p a { text-decoration: underline; text-decoration-color: var(--secondary); text-decoration-thickness: 3px; text-underline-offset: 3px; }
 .resume-header { margin-bottom: var(--resume-gap); }
-.resume-header h1 { margin: 0; font: inherit; text-decoration-line: underline; text-decoration-color: currentColor; text-decoration-thickness: 3px; text-underline-offset: 3px; }
+.resume-header h1 { margin: 0; font: inherit; }
 .resume-contact { margin: 0 0 var(--resume-gap); color: var(--secondary); }
 .resume-summary { margin: 0; }
 .resume-section { margin-bottom: var(--resume-gap); }
@@ -72,7 +67,6 @@ footer > p { max-width: 44ch; margin: 0 0 30px; color: var(--ink); font: inherit
 .resume-main li { margin: 0 0 12px; }
 .resume-main li:last-child { margin-bottom: 0; }
 .resume-footer { margin: var(--resume-gap) 0 0; color: var(--secondary); }
-.resume-footer .footer-nav { margin-top: 0; }
 
 @media (max-width: 760px) {
   body { font-size: 22px; line-height: 1.28; }
@@ -92,7 +86,7 @@ footer > p { max-width: 44ch; margin: 0 0 30px; color: var(--ink); font: inherit
   html { scroll-behavior: auto; }
   body { font-size: 9pt; line-height: 1.2; }
   main.resume-main { width: auto; max-width: none; margin: 0; padding: 0; }
-  .resume-nav, .resume-footer { display: none; }
+  .resume-footer { display: none; }
   .resume-header { margin-bottom: 20pt; }
   .resume-contact { margin-bottom: 10pt; }
   .resume-section { margin-bottom: 18pt; }

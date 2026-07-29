@@ -20,12 +20,8 @@ function Category({ title, items }: { title: string; items: string[] }) {
 export default function Resume() {
   return (
     <main className="resume-main" id="top">
-      <nav className="resume-nav" aria-label="Résumé navigation">
-        <Link href="/">Portfolio</Link>
-      </nav>
-
       <header className="resume-header">
-        <h1>CHRISTOPHER RAMOS</h1>
+        <h1>Christopher Ramos</h1>
         <p className="resume-contact">Los Angeles, CA <span aria-hidden="true">·</span> <a href="tel:+14402121746">(440) 212-1746</a> <span aria-hidden="true">·</span> <a href="mailto:cpramos@me.com">cpramos@me.com</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn<span className="sr-only"> (opens in a new tab)</span></a></p>
         <p className="resume-summary">Marketing and e-commerce operator with over a decade at a luxury multi-brand retailer. Helped open the store and managed it before being pulled behind the scenes into operations, eventually owning the email, paid media, reporting, and site systems the business ran on across three brands. Worked across buying, merchandising, and creative rather than inside a single function.</p>
       </header>
@@ -126,7 +122,8 @@ export default function Resume() {
       </section>
 
       <footer className="resume-footer">
-        <nav className="footer-nav" aria-label="Résumé footer navigation"><Link href="/">Portfolio</Link><a href="#top">Back to top</a></nav>
+        <div className="footer-meta"><a href="mailto:cpramos@me.com">cpramos@me.com</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn</a><span aria-hidden="true">·</span><Link href="/">Portfolio</Link><span aria-hidden="true">·</span><span>Los Angeles, CA</span></div>
+        <nav className="footer-nav" aria-label="Résumé footer navigation"><a href="#top">Back to top</a></nav>
       </footer>
     </main>
   );

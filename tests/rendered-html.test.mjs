@@ -21,7 +21,7 @@ test("server-renders the complete portfolio", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Christopher Ramos/);
-  assert.match(html, /CHRISTOPHER RAMOS/);
+  assert.match(html, />Christopher Ramos</);
   assert.match(html, /Over a decade building the reporting, e-commerce, and creative systems/);
   assert.doesNotMatch(html, /Define the problem\. Then build the tool it actually needs\./);
   assert.match(html, /The Campaign Everyone Assumed Was Fine/);
@@ -42,7 +42,8 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /href="https:\/\/v1984\.art"/);
   assert.match(html, /cpramos@me\.com/);
   assert.match(html, /linkedin\.com\/in\/christopherparkramos/);
-  assert.match(html, /href="\/resume\/"[^>]*>Résumé</);
+  assert.match(html, /<div class="footer-meta"><a href="mailto:cpramos@me\.com">cpramos@me\.com<\/a><span aria-hidden="true">·<\/span><a href="https:\/\/www\.linkedin\.com\/in\/christopherparkramos\/"[^>]*>LinkedIn<\/a><span aria-hidden="true">·<\/span><a href="\/resume\/">Résumé<\/a><span aria-hidden="true">·<\/span><span>Los Angeles, CA<\/span><\/div>/);
+  assert.match(html, /<nav class="footer-nav" aria-label="Footer navigation"><a class="back-top" href="#top">Back to top<\/a><\/nav>/);
   assert.doesNotMatch(html, /CR[–-]0[1-4]/);
   assert.doesNotMatch(html, /Most inefficiency survives exactly/);
   assert.doesNotMatch(html, /The distinction that mattered/);
@@ -62,6 +63,8 @@ test("server-renders the complete résumé route", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Christopher Ramos — Résumé<\/title>/);
+  assert.match(html, /<h1>Christopher Ramos<\/h1>/);
+  assert.doesNotMatch(html, /CHRISTOPHER RAMOS/);
   assert.match(html, /Marketing and e-commerce operator with over a decade/);
   assert.match(html, /open rates \+105%, click rates \+30%, conversion \+9%/);
   assert.match(html, /Grew attributed email revenue 91% YoY, \$474K to \$907K/);
@@ -81,8 +84,9 @@ test("server-renders the complete résumé route", async () => {
   assert.match(html, /href="https:\/\/twomindsnyc\.com\/"[^>]*>two : minds<span class="sr-only"> \(opens in a new tab\)<\/span><\/a>/);
   assert.match(html, /href="https:\/\/v1984\.art"/);
   assert.match(html, /href="https:\/\/www\.cia\.edu\/"/);
-  assert.match(html, /href="\/"[^>]*>Portfolio</);
   assert.match(html, /<main class="resume-main" id="top">/);
+  assert.doesNotMatch(html, /class="resume-nav"/);
+  assert.match(html, /<div class="footer-meta"><a href="mailto:cpramos@me\.com">cpramos@me\.com<\/a><span aria-hidden="true">·<\/span><a href="https:\/\/www\.linkedin\.com\/in\/christopherparkramos\/"[^>]*>LinkedIn<\/a><span aria-hidden="true">·<\/span><a href="\/">Portfolio<\/a><span aria-hidden="true">·<\/span><span>Los Angeles, CA<\/span><\/div>/);
   assert.match(html, /aria-label="Résumé footer navigation"/);
   assert.match(html, /href="#top"[^>]*>Back to top</);
 
@@ -109,6 +113,7 @@ test("keeps the visible typography flat and sans-serif", async () => {
   assert.match(css, /--paper:\s*#111111/);
   assert.match(css, /--ink:\s*#f2f2ee/);
   assert.match(css, /--secondary:\s*#a7a7a2/);
+  assert.match(css, /a\s*\{[^}]*text-decoration-line:\s*underline[^}]*text-decoration-color:\s*var\(--secondary\)[^}]*text-decoration-thickness:\s*3px[^}]*text-underline-offset:\s*3px/s);
   assert.doesNotMatch(css, /38ch/);
   assert.match(css, /\.dek\s*\{[^}]*max-width:\s*44ch/s);
   assert.match(css, /\.case-study\s*\{[^}]*max-width:\s*44ch/s);
@@ -159,10 +164,13 @@ test("keeps the résumé in the site system with a compact print mode", async ()
   assert.match(css, /\.resume-(?:nav|header|section|role|footer)[^{]*\{[^}]*var\(--resume-gap\)/s);
   assert.doesNotMatch(css.split("@media print")[0], /\.resume-(?:nav|header|section|role|contact|category|footer)[^{]*\{[^}]*(?:30|40|48|56|64|70|82|110)px/s);
   assert.match(css, /\.resume-role-header h3\s*\{[^}]*text-decoration-line:\s*underline[^}]*text-decoration-thickness:\s*3px/s);
+  assert.match(css, /\.resume-header h1\s*\{\s*margin:\s*0;\s*font:\s*inherit;\s*\}/s);
+  assert.doesNotMatch(css, /\.resume-header h1\s*\{[^}]*text-decoration/s);
+  assert.doesNotMatch(css, /\.resume-nav/);
   assert.match(css, /\.resume-main ul\s*\{[^}]*padding-left:\s*0;[^}]*list-style:\s*none/s);
   assert.doesNotMatch(css, /\.resume-main li\s*\{[^}]*padding-left:/s);
   assert.match(css, /@media print/);
   assert.match(css, /@page\s*\{\s*margin:\s*\.5in/);
   assert.match(css, /@media print[\s\S]*--paper:\s*#ffffff[\s\S]*--ink:\s*#111111/);
-  assert.match(css, /\.resume-nav, \.resume-footer\s*\{\s*display:\s*none/);
+  assert.match(css, /\.resume-footer\s*\{\s*display:\s*none/);
 });

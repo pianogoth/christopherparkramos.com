@@ -1,0 +1,49 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://christopherparkramos.com"),
+  title: "Christopher Park Ramos — Marketing, Operations & Strategy",
+  description: "Four cases from a decade spent turning ambiguous sales, inventory, and revenue data into decisions people could act on.",
+  openGraph: {
+    title: "Christopher Park Ramos",
+    description: "Define the problem. Then build the tool it actually needs.",
+    url: "https://christopherparkramos.com",
+    siteName: "Christopher Park Ramos",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Christopher Park Ramos",
+    description: "Define the problem. Then build the tool it actually needs.",
+  },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {children}
+      </body>
+    </html>
+  );
+}

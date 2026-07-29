@@ -77,6 +77,8 @@ test("server-renders the complete résumé route", async () => {
   assert.match(html, /linkedin\.com\/in\/christopherparkramos/);
   assert.match(html, /href="https:\/\/ghurka\.com\/"/);
   assert.match(html, /href="https:\/\/www\.xhibition\.co\/"/);
+  assert.match(html, /href="https:\/\/www\.ruleofnext\.com\/"[^>]*>Rule of Next<span class="sr-only"> \(opens in a new tab\)<\/span><\/a>/);
+  assert.match(html, /href="https:\/\/twomindsnyc\.com\/"[^>]*>two : minds<span class="sr-only"> \(opens in a new tab\)<\/span><\/a>/);
   assert.match(html, /href="https:\/\/v1984\.art"/);
   assert.match(html, /href="https:\/\/www\.cia\.edu\/"/);
   assert.match(html, /href="\/"[^>]*>Portfolio</);

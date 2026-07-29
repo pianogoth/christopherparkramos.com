@@ -44,7 +44,7 @@ export default function Resume() {
         <article className="resume-role">
           <header className="resume-role-header">
             <h3>Digital Marketing &amp; Design Manager</h3>
-            <p>Finch Co. — <a href="https://www.xhibition.co/" target="_blank" rel="noreferrer">XHIBITION<span className="sr-only"> (opens in a new tab)</span></a> / Rule of Next / two:minds · 2014 – 2025</p>
+            <p>Finch Co. — <a href="https://www.xhibition.co/" target="_blank" rel="noreferrer">XHIBITION<span className="sr-only"> (opens in a new tab)</span></a> / <a href="https://www.ruleofnext.com/" target="_blank" rel="noreferrer">Rule of Next<span className="sr-only"> (opens in a new tab)</span></a> / <a href="https://twomindsnyc.com/" target="_blank" rel="noreferrer">two : minds<span className="sr-only"> (opens in a new tab)</span></a> · 2014 – 2025</p>
           </header>
           <p>Luxury multi-brand retailer, 50+ global and emerging designers, e-commerce and physical retail. Started in store management at opening and moved into operations; scope grew from one brand to three.</p>
 

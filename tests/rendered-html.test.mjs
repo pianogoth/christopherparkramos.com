@@ -20,15 +20,18 @@ test("server-renders the complete portfolio", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Christopher Park Ramos/);
-  assert.match(html, /Four cases from a decade spent turning ambiguous sales/);
+  assert.match(html, /<title>Christopher Ramos/);
+  assert.match(html, /CHRISTOPHER RAMOS/);
+  assert.match(html, /Over a decade building the reporting, e-commerce, and creative systems/);
   assert.doesNotMatch(html, /Define the problem\. Then build the tool it actually needs\./);
   assert.match(html, /The Campaign Everyone Assumed Was Fine/);
-  assert.match(html, /Turning a Maintenance Channel Into a Growth Channel/);
+  assert.match(html, /The Channel Nobody Was Managing/);
   assert.match(html, /One Sheet, Three Platforms, No Dashboard/);
   assert.match(html, /Running Three Brands as a Company of One/);
-  assert.match(html, /Coda v1984/);
-  assert.match(html, />CODA</);
+  assert.match(html, /Coda — v1984/);
+  assert.match(html, /Open rates up 105%, clicks up 30%, conversion up 9%/);
+  assert.match(html, /Klaviyo used the account as an internal case study/);
+  assert.match(html, /Shopify Plus backend, site speed, SEO, and blog content/);
   assert.match(html, /Everything above this is measured in quarters/);
   assert.match(html, /href="https:\/\/v1984\.art"/);
   assert.match(html, /cpramos@me\.com/);
@@ -37,6 +40,10 @@ test("server-renders the complete portfolio", async () => {
   assert.doesNotMatch(html, /Most inefficiency survives exactly/);
   assert.doesNotMatch(html, /The distinction that mattered/);
   assert.doesNotMatch(html, /Why It Mattered/);
+  assert.doesNotMatch(html, /Four cases from a decade spent turning ambiguous sales/);
+  assert.doesNotMatch(html, /Turning a Maintenance Channel Into a Growth Channel/);
+  assert.doesNotMatch(html, /Paid media ran through an outside agency/);
+  assert.doesNotMatch(html, /Channel revenue overall grew 91% year over year/);
 });
 
 test("keeps the visible typography flat and sans-serif", async () => {

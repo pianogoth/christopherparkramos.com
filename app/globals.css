@@ -38,8 +38,6 @@ main { width: calc(100% - 60px); max-width: 1080px; margin-left: 30px; padding: 
 .case-section h3 { margin: 0; color: var(--secondary); font: inherit; }
 .case-copy p { margin: 0; }
 blockquote { margin: 48px 0; padding: 0; border: 0; font: inherit; }
-.coda .case-header p { margin: 0; color: var(--secondary); }
-.coda .case-header h2 { margin-top: 0; }
 .coda .case-body p { margin: 0 0 30px; }
 .external-link { text-decoration: underline; text-decoration-color: var(--secondary); text-decoration-thickness: 3px; text-underline-offset: 3px; }
 

@@ -3,17 +3,17 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://christopherparkramos.com"),
-  title: "Christopher Park Ramos — Marketing, Operations & Strategy",
-  description: "Four cases from a decade spent turning ambiguous sales, inventory, and revenue data into decisions people could act on.",
+  title: "Christopher Ramos — Marketing, Operations & Strategy",
+  description: "Over a decade building the reporting, e-commerce, and creative systems a luxury multi-brand retailer ran on — across three brands, from the marketing side of the business.",
   openGraph: {
-    title: "Christopher Park Ramos",
+    title: "Christopher Ramos",
     url: "https://christopherparkramos.com",
-    siteName: "Christopher Park Ramos",
+    siteName: "Christopher Ramos",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Christopher Park Ramos",
+    title: "Christopher Ramos",
   },
   icons: {
     icon: "/favicon.svg",

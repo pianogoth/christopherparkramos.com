@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const cases = [
   "The Campaign Everyone Assumed Was Fine",
   "The Channel Nobody Was Managing",
@@ -104,7 +106,7 @@ export default function Home() {
       <footer>
         <p>I&apos;m looking for work where the analytical and creative sides of a brand aren&apos;t handled by different people. If that describes something you&apos;re building, I&apos;d like to hear about it.</p>
         <div className="footer-meta"><a href="mailto:cpramos@me.com">cpramos@me.com</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn</a><span aria-hidden="true">·</span><span>Los Angeles, CA</span></div>
-        <a className="back-top" href="#top">Back to top</a>
+        <nav className="footer-nav" aria-label="Footer navigation"><a className="back-top" href="#top">Back to top</a><Link href="/resume/">Résumé</Link></nav>
       </footer>
     </main>
   );

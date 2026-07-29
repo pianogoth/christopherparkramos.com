@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
+async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", { headers: { accept: "text/html" } }),
+    new Request(`http://localhost${path}`, { headers: { accept: "text/html" } }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
     { waitUntil() {}, passThroughOnException() {} },
   );
@@ -42,6 +42,7 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /href="https:\/\/v1984\.art"/);
   assert.match(html, /cpramos@me\.com/);
   assert.match(html, /linkedin\.com\/in\/christopherparkramos/);
+  assert.match(html, /href="\/resume\/"[^>]*>Résumé</);
   assert.doesNotMatch(html, /CR[–-]0[1-4]/);
   assert.doesNotMatch(html, /Most inefficiency survives exactly/);
   assert.doesNotMatch(html, /The distinction that mattered/);
@@ -52,6 +53,30 @@ test("server-renders the complete portfolio", async () => {
   assert.doesNotMatch(html, /Channel revenue overall grew 91% year over year/);
   assert.doesNotMatch(html, /co-created and performed the US debut of Rabit/);
   assert.doesNotMatch(html, />CONTENTS<|>THE PROBLEM<|>WHAT I DID<|>RESULT</);
+});
+
+test("server-renders the complete résumé route", async () => {
+  const response = await render("/resume/");
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+
+  const html = await response.text();
+  assert.match(html, /<title>Christopher Ramos — Résumé<\/title>/);
+  assert.match(html, /Marketing and e-commerce operator with over a decade/);
+  assert.match(html, /open rates \+105%, click rates \+30%, conversion \+9%/);
+  assert.match(html, /Grew attributed email revenue 91% YoY, \$474K to \$907K/);
+  assert.match(html, /Held Top Secret\/SCI clearance/);
+  assert.match(html, /Cleveland Institute of Art/);
+  assert.match(html, /BFA, Industrial Design/);
+  assert.match(html, /Google Sheets \(VLOOKUP, custom formulas\)/);
+  assert.match(html, /href="tel:\+14402121746"/);
+  assert.match(html, /href="mailto:cpramos@me\.com"/);
+  assert.match(html, /linkedin\.com\/in\/christopherparkramos/);
+  assert.match(html, /href="https:\/\/ghurka\.com\/"/);
+  assert.match(html, /href="https:\/\/www\.xhibition\.co\/"/);
+  assert.match(html, /href="https:\/\/v1984\.art"/);
+  assert.match(html, /href="https:\/\/www\.cia\.edu\/"/);
+  assert.match(html, /href="\/"[^>]*>Portfolio</);
 });
 
 test("keeps the visible typography flat and sans-serif", async () => {
@@ -92,4 +117,20 @@ test("uses the approved CR favicon", async () => {
   assert.doesNotMatch(favicon, /stroke=|gradient|filter|circle|path/);
   assert.match(layout, /icon:\s*"\/favicon\.svg"/);
   assert.match(layout, /shortcut:\s*"\/favicon\.svg"/);
+});
+
+test("keeps the résumé in the site system with a compact print mode", async () => {
+  const [resume, css] = await Promise.all([
+    readFile(new URL("../app/resume/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(resume, /title:\s*"Christopher Ramos — Résumé"/);
+  assert.match(css, /\.resume-main\s*\{[^}]*max-width:\s*44ch/s);
+  assert.match(css, /\.resume-section\s*>\s*h2\s*\{[^}]*color:\s*var\(--secondary\)[^}]*font:\s*inherit/s);
+  assert.match(css, /\.resume-role-header h3\s*\{[^}]*text-decoration-line:\s*underline[^}]*text-decoration-thickness:\s*3px/s);
+  assert.match(css, /@media print/);
+  assert.match(css, /@page\s*\{\s*margin:\s*\.5in/);
+  assert.match(css, /@media print[\s\S]*--paper:\s*#ffffff[\s\S]*--ink:\s*#111111/);
+  assert.match(css, /\.resume-nav\s*\{\s*display:\s*none/);
 });

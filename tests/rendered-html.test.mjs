@@ -113,6 +113,7 @@ test("keeps the visible typography flat and sans-serif", async () => {
   assert.match(css, /--paper:\s*#111111/);
   assert.match(css, /--ink:\s*#f2f2ee/);
   assert.match(css, /--secondary:\s*#a7a7a2/);
+  assert.match(css, /--portfolio-gap:\s*1\.3em/);
   assert.match(css, /a\s*\{[^}]*text-decoration-line:\s*underline[^}]*text-decoration-color:\s*var\(--secondary\)[^}]*text-decoration-thickness:\s*3px[^}]*text-underline-offset:\s*3px/s);
   assert.doesNotMatch(css, /38ch/);
   assert.match(css, /\.dek\s*\{[^}]*max-width:\s*44ch/s);
@@ -127,6 +128,17 @@ test("keeps the visible typography flat and sans-serif", async () => {
   assert.equal(page.match(/className="contents-break"/g)?.length, 2);
   assert.match(css, /\.case-section h3\s*\{[^}]*font:\s*inherit/s);
   assert.match(css, /\.case-body\s*>\s*p\s*\{\s*margin:\s*0;\s*\}/s);
+  assert.match(css, /\.site-header\s*\{\s*margin-bottom:\s*var\(--portfolio-gap\);\s*\}/s);
+  assert.match(css, /\.case-header\s*\{[^}]*margin:\s*0 0 var\(--portfolio-gap\)/s);
+  assert.match(css, /\.case-section\s*\{[^}]*margin:\s*0 0 var\(--portfolio-gap\)/s);
+  assert.match(css, /blockquote\s*\{[^}]*margin:\s*var\(--portfolio-gap\) 0/s);
+  assert.match(css, /\.coda \.case-body p\s*\{[^}]*var\(--portfolio-gap\)/s);
+  assert.match(css, /footer\s*>\s*p\s*\{[^}]*margin:\s*0 0 var\(--portfolio-gap\)/s);
+  assert.match(css, /\.footer-nav\s*\{[^}]*margin-top:\s*var\(--portfolio-gap\)/s);
+  assert.match(css, /\.case-study\s*\{[^}]*margin:\s*0 0 112px/s);
+  assert.match(css, /footer\s*\{\s*margin:\s*150px 0 0/s);
+  assert.match(css, /@media \(max-width:\s*760px\)[\s\S]*\.case-study\s*\{\s*margin-bottom:\s*82px;\s*\}[\s\S]*footer\s*\{\s*margin-top:\s*100px;\s*\}/s);
+  assert.doesNotMatch(css, /\.site-header\s*\{[^}]*margin-bottom:\s*(?:40|42)px/s);
   assert.match(css, /\.case-header h2\s*\{[^}]*font:\s*inherit/s);
   assert.match(css, /\.case-header h2\s*\{[^}]*text-decoration-line:\s*underline[^}]*text-decoration-color:\s*currentColor[^}]*text-decoration-thickness:\s*3px[^}]*text-underline-offset:\s*3px/s);
   assert.doesNotMatch(css, /\.case-section h3\s*\{[^}]*text-decoration-line:\s*underline/s);

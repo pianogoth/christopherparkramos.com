@@ -48,6 +48,9 @@ test("keeps the visible typography flat and sans-serif", async () => {
   assert.doesNotMatch(page, /CR[–-]0[1-4]|entry-type|Case study/);
   assert.doesNotMatch(css, /font-family:\s*var\(--serif\)|--serif:/);
   assert.match(css, /--sans:\s*"Helvetica Neue"/);
+  assert.match(css, /--paper:\s*#111111/);
+  assert.match(css, /--ink:\s*#f2f2ee/);
+  assert.match(css, /--secondary:\s*#a7a7a2/);
   assert.match(css, /\.case-section h3\s*\{[^}]*font:\s*inherit/s);
   assert.match(css, /\.case-header h2\s*\{[^}]*font:\s*inherit/s);
 });

@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #ffffff;
-  --ink: #111111;
-  --secondary: #666666;
+  --paper: #111111;
+  --ink: #f2f2ee;
+  --secondary: #a7a7a2;
   --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 

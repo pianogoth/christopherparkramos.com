@@ -1,14 +1,13 @@
 const cases = [
-  { id: "CR–01", title: "The Campaign Everyone Assumed Was Fine" },
-  { id: "CR–02", title: "Turning a Maintenance Channel Into a Growth Channel" },
-  { id: "CR–03", title: "One Sheet, Three Platforms, No Dashboard" },
-  { id: "CR–04", title: "Running Three Brands as a Company of One" },
+  "The Campaign Everyone Assumed Was Fine",
+  "Turning a Maintenance Channel Into a Growth Channel",
+  "One Sheet, Three Platforms, No Dashboard",
+  "Running Three Brands as a Company of One",
 ];
 
-function CaseHeader({ number, title }: { number: string; title: string }) {
+function CaseHeader({ title }: { title: string }) {
   return (
     <header className="case-header">
-      <p className="case-number">{number}</p>
       <h2>{title}</h2>
     </header>
   );
@@ -41,12 +40,10 @@ export default function Home() {
       <nav className="contents" id="contents" aria-label="Case studies">
         <p className="contents-label">Contents</p>
         <ol>
-          {cases.map((item, index) => (
-            <li key={item.id}>
+          {cases.map((title, index) => (
+            <li key={title}>
               <a href={`#case-${index + 1}`}>
-                <span>{item.id}</span>
-                <strong>{item.title}</strong>
-                <span className="entry-type">Case study</span>
+                {title}
               </a>
             </li>
           ))}
@@ -54,7 +51,7 @@ export default function Home() {
       </nav>
 
       <article className="case-study" id="case-1">
-        <CaseHeader number="CR–01" title="The Campaign Everyone Assumed Was Fine" />
+        <CaseHeader title="The Campaign Everyone Assumed Was Fine" />
         <div className="case-body">
           <Section label="The Problem"><p>Paid media ran through an outside agency. The reports looked normal — spend, impressions, the usual dashboard fare — but return on ad spend told a different story: 0.83. Less than a dollar came back for every dollar spent. Nobody had flagged it, because “paid media is expensive” is an easy assumption to hide behind.</p></Section>
           <Section label="What I Did"><p>Audited the actual campaign structure instead of the summary numbers — targeting, creative rotation, bid strategy — and found the gap between what was being spent and what was actually converting. Rebuilt the strategy and reporting in-house.</p></Section>
@@ -64,7 +61,7 @@ export default function Home() {
       </article>
 
       <article className="case-study" id="case-2">
-        <CaseHeader number="CR–02" title="Turning a Maintenance Channel Into a Growth Channel" />
+        <CaseHeader title="Turning a Maintenance Channel Into a Growth Channel" />
         <div className="case-body">
           <Section label="The Problem"><p>Email was treated the way most retailers treat it: a maintenance channel. Promotions, order updates, the same message to everyone on the list. It generated revenue, but nobody was actively managing it the way they’d manage paid acquisition.</p></Section>
           <Section label="What I Did"><p>Rebuilt it around segmentation and behavioral targeting — what a customer had actually done, not just that they were on a list. Lifecycle automation — welcome flows, post-purchase, win-back — went from an afterthought to a real system, scaling from $33K to $112K on its own.</p></Section>
@@ -74,7 +71,7 @@ export default function Home() {
       </article>
 
       <article className="case-study" id="case-3">
-        <CaseHeader number="CR–03" title="One Sheet, Three Platforms, No Dashboard" />
+        <CaseHeader title="One Sheet, Three Platforms, No Dashboard" />
         <div className="case-body">
           <Section label="The Problem"><p>Performance data lived in three separate systems — Meta Ads Manager, Google Analytics, Shopify — each with its own interface and its own definition of a sale. Getting a straight answer to “how did we do this week” meant three tabs and hand math, every time.</p></Section>
           <Section label="What Ownership Actually Wanted"><p>The obvious fix is a dashboard. I built one early on and it didn’t land — ownership wanted the actual numbers, not a chart standing in for them.</p></Section>
@@ -85,7 +82,7 @@ export default function Home() {
       </article>
 
       <article className="case-study" id="case-4">
-        <CaseHeader number="CR–04" title="Running Three Brands as a Company of One" />
+        <CaseHeader title="Running Three Brands as a Company of One" />
         <div className="case-body">
           <Section label="The Setup"><p>I joined as the first dedicated marketing hire across three brands — XHIBITION, Rule of Next, two:minds — under one roof, each needing a distinct visual and commercial identity, none of them with a dedicated team. Eleven years later, I was still the connective layer between them.</p></Section>
           <Section label="The Actual Job"><p>It was never “do marketing for three brands.” It was building shared infrastructure — reporting cadence, creative production process, e-commerce operations — flexible enough to let each brand keep its own voice without needing its own department. Campaign shoots that became each brand’s highest-performing creative. Executive business reviews synthesizing sales and inventory for global brand partners. Visual identity and packaging maintained as a system, not reinvented per project.</p></Section>

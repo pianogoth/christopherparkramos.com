@@ -126,6 +126,7 @@ test("keeps the visible typography flat and sans-serif", async () => {
   assert.match(page, /<\/nav>\s*<div className="contents-break" aria-hidden="true" style=\{\{ blockSize: "clamp\(140px, 14vw, 220px\)" \}\} \/>\s*<article className="case-study" id="case-1">/s);
   assert.equal(page.match(/className="contents-break"/g)?.length, 2);
   assert.match(css, /\.case-section h3\s*\{[^}]*font:\s*inherit/s);
+  assert.match(css, /\.case-body\s*>\s*p\s*\{\s*margin:\s*0;\s*\}/s);
   assert.match(css, /\.case-header h2\s*\{[^}]*font:\s*inherit/s);
   assert.match(css, /\.case-header h2\s*\{[^}]*text-decoration-line:\s*underline[^}]*text-decoration-color:\s*currentColor[^}]*text-decoration-thickness:\s*3px[^}]*text-underline-offset:\s*3px/s);
   assert.doesNotMatch(css, /\.case-section h3\s*\{[^}]*text-decoration-line:\s*underline/s);
@@ -158,6 +159,8 @@ test("keeps the résumé in the site system with a compact print mode", async ()
   assert.match(css, /\.resume-main\s*\{[^}]*max-width:\s*44ch/s);
   assert.match(css, /\.resume-main\s*\{[^}]*--resume-gap:\s*1\.3em/s);
   assert.match(css, /\.resume-section\s*>\s*h2\s*\{[^}]*margin:\s*0;[^}]*color:\s*var\(--secondary\)[^}]*font:\s*inherit/s);
+  assert.match(css, /\.resume-section\s*>\s*h2\s*\+\s*\.resume-role\s*\{\s*margin-top:\s*var\(--resume-gap\);\s*\}/s);
+  assert.match(css, /@media print[\s\S]*\.resume-section\s*>\s*h2\s*\+\s*\.resume-role\s*\{\s*margin-top:\s*0;\s*\}/s);
   assert.match(css, /\.resume-section\s*>\s*p\s*\{\s*margin:\s*0;\s*\}/s);
   assert.match(css, /\.resume-category h4\s*\{[^}]*margin:\s*0;[^}]*color:\s*var\(--secondary\)/s);
   assert.match(css, /\.resume-role-header\s*\{\s*margin-bottom:\s*var\(--resume-gap\)/s);
@@ -170,7 +173,15 @@ test("keeps the résumé in the site system with a compact print mode", async ()
   assert.match(css, /\.resume-main ul\s*\{[^}]*padding-left:\s*0;[^}]*list-style:\s*none/s);
   assert.doesNotMatch(css, /\.resume-main li\s*\{[^}]*padding-left:/s);
   assert.match(css, /@media print/);
-  assert.match(css, /@page\s*\{\s*margin:\s*\.5in/);
-  assert.match(css, /@media print[\s\S]*--paper:\s*#ffffff[\s\S]*--ink:\s*#111111/);
+  assert.match(css, /@page resume\s*\{\s*margin:\s*\.5in/);
+  assert.match(css, /body:has\(\.resume-main\)\s*\{[^}]*--paper:\s*#ffffff[^}]*--ink:\s*#111111/s);
+  assert.doesNotMatch(css, /@media print\s*\{[\s\S]*?\n\s*:root\s*\{/s);
+  assert.doesNotMatch(css, /@media print\s*\{[\s\S]*?\n\s*body\s*\{/s);
+  assert.doesNotMatch(css, /break-inside:\s*avoid-page/);
+  assert.match(css, /\.resume-role-header\s*\{[^}]*break-after:\s*avoid-page/s);
+  assert.match(css, /\.resume-category h4\s*\{[^}]*break-after:\s*avoid-page/s);
+  assert.match(css, /@media print[\s\S]*\.resume-main a\s*\{[^}]*text-decoration-thickness:\s*1px/s);
+  assert.match(css, /@media print[\s\S]*\.resume-role-header h3\s*\{[^}]*text-decoration-thickness:\s*1px/s);
   assert.match(css, /\.resume-footer\s*\{\s*display:\s*none/);
+  assert.doesNotMatch(css, /\.header-meta a:hover/);
 });

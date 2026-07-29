@@ -25,6 +25,11 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /Over a decade building the reporting, e-commerce, and creative systems/);
   assert.doesNotMatch(html, /Define the problem\. Then build the tool it actually needs\./);
   assert.match(html, /The Campaign Everyone Assumed Was Fine/);
+  assert.match(html, />Contents</);
+  assert.match(html, />The Problem</);
+  assert.match(html, />What I Did</);
+  assert.match(html, />What Ownership Actually Wanted</);
+  assert.match(html, />What That Actually Meant</);
   assert.match(html, /The Channel Nobody Was Managing/);
   assert.match(html, /One Sheet, Three Platforms, No Dashboard/);
   assert.match(html, /Running Three Brands as a Company of One/);
@@ -32,6 +37,7 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /Open rates up 105%, clicks up 30%, conversion up 9%/);
   assert.match(html, /Klaviyo used the account as an internal case study/);
   assert.match(html, /Shopify Plus backend, site speed, SEO, and blog content/);
+  assert.match(html, /I performed with Rabit for the US debut of Stranger in a Strange Land/);
   assert.match(html, /Everything above this is measured in quarters/);
   assert.match(html, /href="https:\/\/v1984\.art"/);
   assert.match(html, /cpramos@me\.com/);
@@ -44,6 +50,8 @@ test("server-renders the complete portfolio", async () => {
   assert.doesNotMatch(html, /Turning a Maintenance Channel Into a Growth Channel/);
   assert.doesNotMatch(html, /Paid media ran through an outside agency/);
   assert.doesNotMatch(html, /Channel revenue overall grew 91% year over year/);
+  assert.doesNotMatch(html, /co-created and performed the US debut of Rabit/);
+  assert.doesNotMatch(html, />CONTENTS<|>THE PROBLEM<|>WHAT I DID<|>RESULT</);
 });
 
 test("keeps the visible typography flat and sans-serif", async () => {
@@ -62,6 +70,7 @@ test("keeps the visible typography flat and sans-serif", async () => {
   assert.match(css, /\.dek\s*\{[^}]*max-width:\s*44ch/s);
   assert.match(css, /\.case-study\s*\{[^}]*max-width:\s*44ch/s);
   assert.match(css, /footer\s*>\s*p\s*\{[^}]*max-width:\s*44ch/s);
+  assert.match(css, /\.contents\s*\{[^}]*margin:\s*0 0 140px/s);
   assert.match(css, /\.case-section h3\s*\{[^}]*font:\s*inherit/s);
   assert.match(css, /\.case-header h2\s*\{[^}]*font:\s*inherit/s);
   assert.match(css, /\.case-header h2\s*\{[^}]*text-decoration-line:\s*underline[^}]*text-decoration-color:\s*currentColor[^}]*text-decoration-thickness:\s*3px[^}]*text-underline-offset:\s*3px/s);

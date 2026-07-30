@@ -37,6 +37,9 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /Open rates up 105%, clicks up 30%, conversion up 9%/);
   assert.match(html, /Klaviyo used the account as an internal case study/);
   assert.match(html, /Shopify Plus backend, site speed, SEO, and blog content/);
+  assert.match(html, /I helped open XHIBITION in 2014 and managed the store/);
+  assert.match(html, /less by plan than by being the person who kept solving whatever was broken/);
+  assert.match(html, /Our Klaviyo rep once told me she didn’t believe one person was doing all of it\./);
   assert.match(html, /I performed with Rabit for the US debut of Stranger in a Strange Land/);
   assert.match(html, /Everything above this is measured in quarters/);
   assert.match(html, /href="https:\/\/v1984\.art"/);
@@ -52,6 +55,7 @@ test("server-renders the complete portfolio", async () => {
   assert.doesNotMatch(html, /Turning a Maintenance Channel Into a Growth Channel/);
   assert.doesNotMatch(html, /Paid media ran through an outside agency/);
   assert.doesNotMatch(html, /Channel revenue overall grew 91% year over year/);
+  assert.doesNotMatch(html, /I joined XHIBITION in 2014 as the first dedicated marketing hire/);
   assert.doesNotMatch(html, /co-created and performed the US debut of Rabit/);
   assert.doesNotMatch(html, />CONTENTS<|>THE PROBLEM<|>WHAT I DID<|>RESULT</);
 });

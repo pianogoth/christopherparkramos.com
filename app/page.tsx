@@ -32,7 +32,7 @@ export default function Home() {
         <a className="wordmark" href="#top" aria-label="Christopher Ramos, home">
           Christopher Ramos
         </a>
-        <p className="header-meta">Los Angeles, CA <span aria-hidden="true">·</span> <a href="mailto:cpramos@me.com">cpramos@me.com</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn<span className="sr-only"> (opens in a new tab)</span></a></p>
+        <p className="header-meta">Los Angeles, CA <span aria-hidden="true">·</span> <a href="mailto:hi@christopherparkramos.com">hi@christopherparkramos.com</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn<span className="sr-only"> (opens in a new tab)</span></a></p>
       </header>
 
       <section className="intro" id="top">
@@ -109,7 +109,7 @@ export default function Home() {
 
       <footer>
         <p>I&apos;m looking for work where the analytical and creative sides of a brand aren&apos;t handled by different people. If that describes something you&apos;re building, I&apos;d like to hear about it.</p>
-        <div className="footer-meta"><a href="mailto:cpramos@me.com">cpramos@me.com</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn</a><span aria-hidden="true">·</span><Link href="/resume/">Résumé</Link><span aria-hidden="true">·</span><span>Los Angeles, CA</span></div>
+        <div className="footer-meta"><a href="mailto:hi@christopherparkramos.com">hi@christopherparkramos.com</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn</a><span aria-hidden="true">·</span><Link href="/resume/">Résumé</Link><span aria-hidden="true">·</span><span>Los Angeles, CA</span></div>
         <nav className="footer-nav" aria-label="Footer navigation"><a className="back-top" href="#top">Back to top</a></nav>
       </footer>
     </main>

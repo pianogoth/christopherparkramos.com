@@ -43,9 +43,9 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /I performed with Rabit for the US debut of Stranger in a Strange Land/);
   assert.match(html, /Everything above this is measured in quarters/);
   assert.match(html, /href="https:\/\/v1984\.art"/);
-  assert.match(html, /cpramos@me\.com/);
+  assert.match(html, /hi@christopherparkramos\.com/);
   assert.match(html, /linkedin\.com\/in\/christopherparkramos/);
-  assert.match(html, /<div class="footer-meta"><a href="mailto:cpramos@me\.com">cpramos@me\.com<\/a><span aria-hidden="true">·<\/span><a href="https:\/\/www\.linkedin\.com\/in\/christopherparkramos\/"[^>]*>LinkedIn<\/a><span aria-hidden="true">·<\/span><a href="\/resume\/">Résumé<\/a><span aria-hidden="true">·<\/span><span>Los Angeles, CA<\/span><\/div>/);
+  assert.match(html, /<div class="footer-meta"><a href="mailto:hi@christopherparkramos\.com">hi@christopherparkramos\.com<\/a><span aria-hidden="true">·<\/span><a href="https:\/\/www\.linkedin\.com\/in\/christopherparkramos\/"[^>]*>LinkedIn<\/a><span aria-hidden="true">·<\/span><a href="\/resume\/">Résumé<\/a><span aria-hidden="true">·<\/span><span>Los Angeles, CA<\/span><\/div>/);
   assert.match(html, /<nav class="footer-nav" aria-label="Footer navigation"><a class="back-top" href="#top">Back to top<\/a><\/nav>/);
   assert.doesNotMatch(html, /CR[–-]0[1-4]/);
   assert.doesNotMatch(html, /Most inefficiency survives exactly/);
@@ -80,7 +80,7 @@ test("server-renders the complete résumé route", async () => {
   assert.match(html, /Email &amp; Lifecycle Marketing · Retention &amp; CRM · Paid Media Management/);
   assert.match(html, /Cross-Functional Collaboration · Process &amp; Systems Design/);
   assert.match(html, /href="tel:\+14402121746"/);
-  assert.match(html, /href="mailto:cpramos@me\.com"/);
+  assert.match(html, /href="mailto:hi@christopherparkramos\.com"/);
   assert.match(html, /linkedin\.com\/in\/christopherparkramos/);
   assert.match(html, /href="https:\/\/ghurka\.com\/"/);
   assert.match(html, /href="https:\/\/www\.xhibition\.co\/"/);
@@ -90,7 +90,7 @@ test("server-renders the complete résumé route", async () => {
   assert.match(html, /href="https:\/\/www\.cia\.edu\/"/);
   assert.match(html, /<main class="resume-main" id="top">/);
   assert.doesNotMatch(html, /class="resume-nav"/);
-  assert.match(html, /<div class="footer-meta"><a href="mailto:cpramos@me\.com">cpramos@me\.com<\/a><span aria-hidden="true">·<\/span><a href="https:\/\/www\.linkedin\.com\/in\/christopherparkramos\/"[^>]*>LinkedIn<\/a><span aria-hidden="true">·<\/span><a href="\/">Portfolio<\/a><span aria-hidden="true">·<\/span><span>Los Angeles, CA<\/span><\/div>/);
+  assert.match(html, /<div class="footer-meta"><a href="mailto:hi@christopherparkramos\.com">hi@christopherparkramos\.com<\/a><span aria-hidden="true">·<\/span><a href="https:\/\/www\.linkedin\.com\/in\/christopherparkramos\/"[^>]*>LinkedIn<\/a><span aria-hidden="true">·<\/span><a href="\/">Portfolio<\/a><span aria-hidden="true">·<\/span><span>Los Angeles, CA<\/span><\/div>/);
   assert.match(html, /aria-label="Résumé footer navigation"/);
   assert.match(html, /href="#top"[^>]*>Back to top</);
 

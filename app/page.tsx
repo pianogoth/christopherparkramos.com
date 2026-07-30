@@ -29,10 +29,8 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Christopher Ramos, home">
-          Christopher Ramos
-        </a>
-        <p className="header-meta">Los Angeles, CA <span aria-hidden="true">·</span> <a href="mailto:hi@christopherparkramos.com">hi@christopherparkramos.com</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn<span className="sr-only"> (opens in a new tab)</span></a></p>
+        <p className="header-name">Christopher Ramos. Los Angeles, CA.</p>
+        <p className="header-meta"><a href="mailto:hi@christopherparkramos.com">hi@christopherparkramos.com</a> <span aria-hidden="true">/</span> <a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn<span className="sr-only"> (opens in a new tab)</span></a></p>
       </header>
 
       <section className="intro" id="top">

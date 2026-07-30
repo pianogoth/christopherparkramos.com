@@ -21,7 +21,7 @@ test("server-renders the complete portfolio", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Christopher Ramos/);
-  assert.match(html, />Christopher Ramos</);
+  assert.match(html, />Christopher Ramos\. Los Angeles, CA\.</);
   assert.match(html, /Over a decade building the reporting, e-commerce, and creative systems/);
   assert.doesNotMatch(html, /Define the problem\. Then build the tool it actually needs\./);
   assert.match(html, /The Campaign Everyone Assumed Was Fine/);

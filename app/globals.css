@@ -19,7 +19,7 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 
 main { width: calc(100% - 60px); max-width: 1080px; margin-left: 30px; padding: 20px 0 52px; }
 .site-header { margin-bottom: var(--portfolio-gap); }
-.wordmark { display: block; width: fit-content; }
+.header-name { margin: 0; }
 .header-meta { margin: 0; color: var(--secondary); }
 
 .intro { margin: 0; scroll-margin-top: 20px; }

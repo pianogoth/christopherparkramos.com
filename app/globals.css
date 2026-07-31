@@ -90,13 +90,15 @@ footer > p { max-width: 44ch; margin: 0 0 var(--portfolio-gap); color: var(--ink
   .resume-contact { margin-bottom: 10pt; }
   .resume-section { margin-bottom: 18pt; }
   .resume-section > h2 { margin-bottom: 10pt; }
+  .resume-section > h2:has(+ p) { margin-bottom: 0; }
   .resume-section > h2 + .resume-role { margin-top: 0; }
   .resume-role { margin-bottom: 14pt; }
+  .resume-role-page-break { break-before: page; }
   .resume-role-header { margin-bottom: 6pt; break-after: avoid-page; }
   .resume-role > p { margin-bottom: 7pt; }
   .resume-category { margin-top: 8pt; }
   .resume-category h4 { margin-bottom: 2pt; break-after: avoid-page; }
   .resume-main li { margin-bottom: 2pt; }
   .resume-main a { color: inherit; text-decoration-thickness: 1px; }
-  .resume-role-header h3 { text-decoration-thickness: 1px; }
+  .resume-role-header h3 { text-decoration-thickness: 1px; margin-bottom: 2pt; }
 }

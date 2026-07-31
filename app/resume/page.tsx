@@ -75,10 +75,10 @@ export default function Resume() {
           ]} />
         </article>
 
-        <article className="resume-role">
+        <article className="resume-role resume-role-page-break">
           <header className="resume-role-header">
             <h3>Intelligence Analyst</h3>
-            <p>U.S. Air Force / National Security Agency · Fort Gordon, GA · 2004 – 2010</p>
+            <p>U.S. Air Force / NSA/CSS · Fort Gordon, GA · 2004 – 2010</p>
           </header>
           <ul>
             <li>Analyzed complex information and produced written assessments used by senior decision-makers.</li>
@@ -123,7 +123,7 @@ export default function Resume() {
 
       <footer className="resume-footer">
         <div className="footer-meta"><a href="mailto:hi@christopherparkramos.com">hi@christopherparkramos.com</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/christopherparkramos/" target="_blank" rel="noreferrer">LinkedIn</a><span aria-hidden="true">·</span><Link href="/">Portfolio</Link><span aria-hidden="true">·</span><span>Los Angeles, CA</span></div>
-        <nav className="footer-nav" aria-label="Résumé footer navigation"><a href="#top">Back to top</a></nav>
+        <nav className="footer-nav" aria-label="Résumé footer navigation"><a href="#top">Back to top</a><a href="/Christopher-Park-Ramos-Resume.pdf" download="Christopher-Park-Ramos-Resume.pdf">Download PDF</a></nav>
       </footer>
     </main>
   );

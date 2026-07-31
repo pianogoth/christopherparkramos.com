@@ -93,6 +93,11 @@ test("server-renders the complete résumé route", async () => {
   assert.match(html, /<div class="footer-meta"><a href="mailto:hi@christopherparkramos\.com">hi@christopherparkramos\.com<\/a><span aria-hidden="true">·<\/span><a href="https:\/\/www\.linkedin\.com\/in\/christopherparkramos\/"[^>]*>LinkedIn<\/a><span aria-hidden="true">·<\/span><a href="\/">Portfolio<\/a><span aria-hidden="true">·<\/span><span>Los Angeles, CA<\/span><\/div>/);
   assert.match(html, /aria-label="Résumé footer navigation"/);
   assert.match(html, /href="#top"[^>]*>Back to top</);
+  assert.match(html, /U\.S\. Air Force \/ NSA\/CSS · Fort Gordon, GA · 2004 – 2010/);
+  assert.doesNotMatch(html, /National Security Agency/);
+  assert.match(html, /href="\/Christopher-Park-Ramos-Resume\.pdf"/);
+  assert.match(html, /download="Christopher-Park-Ramos-Resume\.pdf"/);
+  assert.match(html, /aria-label="Résumé footer navigation"><a href="#top">Back to top<\/a><a href="\/Christopher-Park-Ramos-Resume\.pdf" download="Christopher-Park-Ramos-Resume\.pdf">Download PDF<\/a><\/nav>/);
 
   const statementItems = [...html.matchAll(/<li>(.*?)<\/li>/g)].map((match) => match[1]);
   assert.equal(statementItems.length, 24);
@@ -172,6 +177,8 @@ test("keeps the résumé in the site system with a compact print mode", async ()
   ]);
 
   assert.match(resume, /title:\s*"Christopher Ramos — Résumé"/);
+  assert.match(resume, /U\.S\. Air Force \/ NSA\/CSS · Fort Gordon, GA · 2004 – 2010/);
+  assert.doesNotMatch(resume, /National Security Agency/);
   assert.match(css, /\.resume-main\s*\{[^}]*max-width:\s*44ch/s);
   assert.match(css, /\.resume-main\s*\{[^}]*--resume-gap:\s*1\.3em/s);
   assert.match(css, /\.resume-section\s*>\s*h2\s*\{[^}]*margin:\s*0;[^}]*color:\s*var\(--secondary\)[^}]*font:\s*inherit/s);
